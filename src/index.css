@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #f59e0b;
+    --gold-bright: #fbbf24;
+    --gold-deep: #b45309;
+    --gold-glow: rgba(245, 158, 11, 0.45);
+    --ef-dark-blue: #040817;
+    --ef-pitch-black: #02040a;
+    --ef-navy: #09132e;
+    --ef-cyan-accent: #00d2ff;
+  }
+
+  body {
+    background-color: #030612;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Cinzel', 'Teko', Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-teko {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* eFootball Gameplay Arena & Stadium Pitch Background */
+.efootball-gameplay-arena {
+  position: relative;
+  background-color: #030614;
+  background-image:
+    /* Floodlight Beams & Stadium Glows */
+    radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.28) 0%, rgba(9, 19, 46, 0.55) 45%, rgba(3, 6, 20, 0) 80%),
+    radial-gradient(circle at 90% 15%, rgba(0, 210, 255, 0.22) 0%, rgba(3, 6, 20, 0) 60%),
+    radial-gradient(circle at 10% 45%, rgba(251, 191, 36, 0.18) 0%, rgba(3, 6, 20, 0) 55%),
+    radial-gradient(circle at 80% 85%, rgba(16, 185, 129, 0.15) 0%, rgba(3, 6, 20, 0) 50%),
+    /* Tactical eFootball Pitch Grid */
+    linear-gradient(rgba(0, 210, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.04) 1px, transparent 1px),
+    /* Stadium Grass Turf Pattern */
+    repeating-linear-gradient(
+      0deg,
+      rgba(5, 26, 20, 0.4) 0px,
+      rgba(5, 26, 20, 0.4) 60px,
+      rgba(3, 16, 13, 0.5) 60px,
+      rgba(3, 16, 13, 0.5) 120px
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px, 100% 120px;
+}
+
+.efootball-gameplay-backdrop {
+  position: relative;
+  background-color: #040818;
+  background-image:
+    linear-gradient(to bottom, rgba(4, 8, 24, 0.82) 0%, rgba(3, 6, 18, 0.94) 70%, rgba(2, 4, 12, 0.98) 100%),
+    url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1600&auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.efootball-stadium-night {
+  position: relative;
+  background-color: #020510;
+  background-image:
+    linear-gradient(to bottom, rgba(2, 5, 16, 0.88) 0%, rgba(3, 6, 20, 0.94) 60%, rgba(2, 4, 10, 0.99) 100%),
+    url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.efootball-pitch-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    /* Center pitch circle */
+    radial-gradient(circle at 50% 50%, transparent 110px, rgba(245, 158, 11, 0.09) 111px, rgba(245, 158, 11, 0.09) 113px, transparent 114px),
+    /* Center pitch line */
+    linear-gradient(to bottom, transparent 49.8%, rgba(245, 158, 11, 0.1) 50%, transparent 50.2%);
+}
+
+/* eFootball 2027 Dark Blue, Black & Gold Stadium Atmosphere */
+.efootball-bg {
+  background-color: #030612;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(245, 158, 11, 0.22) 0%, rgba(9, 19, 46, 0.4) 40%, rgba(3, 6, 18, 0) 75%),
+    radial-gradient(circle at 85% 20%, rgba(0, 140, 255, 0.12) 0%, rgba(3, 6, 18, 0) 50%),
+    radial-gradient(circle at 15% 60%, rgba(251, 191, 36, 0.1) 0%, rgba(3, 6, 18, 0) 50%),
+    radial-gradient(circle at 50% 100%, rgba(14, 28, 68, 0.6) 0%, rgba(3, 6, 18, 0) 70%),
+    linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Stadium Floodlight Overhead Beams */
+.stadium-floodlights {
+  position: relative;
+}
+
+.stadium-floodlights::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 20%;
+  width: 250px;
+  height: 400px;
+  background: radial-gradient(ellipse at top, rgba(253, 224, 71, 0.15), transparent 70%);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+.stadium-floodlights::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: 20%;
+  width: 250px;
+  height: 400px;
+  background: radial-gradient(ellipse at top, rgba(0, 210, 255, 0.12), transparent 70%);
+  transform: rotate(18deg);
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 25%, #f59e0b 60%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-border {
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.45), 0 0 60px rgba(217, 119, 6, 0.25);
+  border-color: rgba(251, 191, 36, 0.7);
+}
+
+.efootball-card-foil {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.18) 0%,
+    rgba(9, 19, 46, 0.95) 35%,
+    rgba(14, 24, 55, 0.98) 70%,
+    rgba(217, 119, 6, 0.25) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.efootball-card-foil::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(251, 191, 36, 0.2) 52%,
+    transparent 65%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.efootball-card-foil:hover::after {
+  transform: rotate(25deg) translate(30%, 30%);
+}
+
+.gold-button {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 45%, #d97706 80%, #b45309 100%);
+  color: #030712;
+  font-weight: 800;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
+  transition: all 0.25s ease;
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #fef08a 0%, #fbbf24 45%, #f59e0b 80%, #d97706 100%);
+  box-shadow: 0 6px 25px rgba(245, 158, 11, 0.65), 0 0 15px rgba(251, 191, 36, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(9, 19, 46, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fde047;
+}
+
+/* Glowing golden pulsing animation */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(245, 158, 11, 0.65), 0 0 15px rgba(251, 191, 36, 0.4);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 3s infinite ease-in-out;
+}
+
+/* Shimmer scanline effect for gaming HUD */
+@keyframes scanline {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030612;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #152044;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+

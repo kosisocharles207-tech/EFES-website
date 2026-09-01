@@ -1,0 +1,6 @@
+{
+  "name": "EFES Official Website",
+  "description": "The official eFootball Elite Squad (EFES) website, featuring tournament archives, Hall of Fame immortals, Ballon d'Or Season 2, trophies, and community news.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
